@@ -1,7 +1,12 @@
 html, body { width:100%; height:100%; } /* full screen */
-canvas { display:block; } /* scrollbars bad */
 * { margin:0; padding:0; } /* no whitespace */
 
-canvas {
-    background: #272935;
+body {
+    background-color: #272935;
+}
+
+#logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
