@@ -5,8 +5,16 @@ body {
     background-color: #272935;
 }
 
-#logo {
+.block {
+    display: block;
     position: absolute;
+}
+
+#tbar {
     top: 0px;
     left: 0px;
+}
+
+#content {
+
 }
