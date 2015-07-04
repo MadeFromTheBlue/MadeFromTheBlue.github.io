@@ -1,8 +1,12 @@
-html, body { width:100%; height:100%; } /* full screen */
-* { margin:0; padding:0; } /* no whitespace */
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
 
 body {
     background-color: #272935;
+    overflow: hidden;
 }
 
 .block {
@@ -16,5 +20,15 @@ body {
 }
 
 #content {
+    margin: 0px;
+}
 
+#in_content {
+    position:relative;
+    border-radius: 10px;
+    background: #EDEDED;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    top: 5%;
 }

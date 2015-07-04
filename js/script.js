@@ -11,6 +11,8 @@ var edges = [];
 var mousex;
 var mousey;
 
+var smallDim;
+
 function readMouse(e) {
     mousex = e.clientX;
     mousey = e.clientY;
@@ -49,7 +51,6 @@ function drawtbar(time, scale) {
 
     var itime = Math.round((time * 80) / 4);
 
-    console.log(itime);
     var center = centers[itime];
     var edge = edges[itime];
 
@@ -75,17 +76,23 @@ function centerLeft(width) {
 }
 
 function resize() {
-    var mw = Math.min(window.innerWidth, window.innerHeight);
+    smallDim = Math.min(window.innerWidth, window.innerHeight);
 
     tbar.width = window.innerWidth;
-
-    content.width = window.innerWidth * 0.85;
-    content.style.left = centerLeft(content.width);
+    content.style.width = window.innerWidth + "px";
 }
 
 resize();
 
 setInterval(function () {
-    drawtbar(1 - (4 * (mousey - 50) / window.innerHeight), 250);
-    content.style.top = tbar.height + 50 + "px";
+    if (mousex)
+    {
+        drawtbar(1 - (4 * (mousey - 50) / window.innerHeight), Math.min(smallDim, 250));
+    }
+    else
+    {
+        drawtbar(0, Math.min(smallDim, 250));
+    }
+    content.style.top = tbar.height + "px";
+    content.style.height = window.innerHeight - tbar.height -5 + "px";
 }, 100);
